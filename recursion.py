@@ -276,6 +276,11 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(count_8(818), 2)
         self.assertEqual(count_8(8188), 4)
 
+    def test_sum_down_by_2(self):
+        self.assertEqual(sum_down_by_2(0), 0)
+        self.assertEqual(sum_down_by_2(2), 2)
+        self.assertEqual(sum_down_by_2(6), 12)
+
     def test_count_x(self):
         self.assertEqual(count_x('hi'), 0)
         self.assertEqual(count_x('hixx'), 2)
