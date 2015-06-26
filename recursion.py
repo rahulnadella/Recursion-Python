@@ -57,11 +57,11 @@ def count_8(n):
     if n == 0:
         return 0
     elif n >= 88 and n % 100 == 88:
-        return 2 + count_8(n / 10)
+        return 2 + count_8(int(n / 10))
     elif n % 10 == 8:
-        return 1 + count_8(n / 10)
+        return 1 + count_8(int(n / 10))
     else:
-        return count_8(n / 10)
+        return count_8(int(n / 10))
 
 def harmonic_sum(n):
     if n < 2:
@@ -270,6 +270,11 @@ class RecursionTest(unittest.TestCase):
     def test_count_7(self):
         self.assertEqual(count_7(8643), 0)
         self.assertEqual(count_7(717), 2)
+
+    def test_count_8(self):
+        self.assertEqual(count_8(8), 1)
+        self.assertEqual(count_8(818), 2)
+        self.assertEqual(count_8(8188), 4)
 
     def test_count_x(self):
         self.assertEqual(count_x('hi'), 0)
