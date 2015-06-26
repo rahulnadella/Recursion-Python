@@ -281,6 +281,12 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(sum_down_by_2(2), 2)
         self.assertEqual(sum_down_by_2(6), 12)
 
+    def test_harmonic_sum(self):
+        self.assertEqual(harmonic_sum(1), 1)
+        self.assertEqual(harmonic_sum(2), 1.5)
+        self.assertAlmostEqual(harmonic_sum(3), 1.833, 3)
+        self.assertAlmostEqual(harmonic_sum(4), 2.083, 3)
+
     def test_count_x(self):
         self.assertEqual(count_x('hi'), 0)
         self.assertEqual(count_x('hixx'), 2)
