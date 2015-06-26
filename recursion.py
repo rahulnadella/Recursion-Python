@@ -291,6 +291,10 @@ class RecursionTest(unittest.TestCase):
         self.assertAlmostEqual(geometric_sum(0), 1, 1)
         self.assertAlmostEqual(geometric_sum(1), 1.5, 1)
 
+    def test_expt(self):
+        self.assertEqual(expt(2, 3), 8)
+        self.assertEqual(expt(3, 1), 3)
+
     def test_count_x(self):
         self.assertEqual(count_x('hi'), 0)
         self.assertEqual(count_x('hixx'), 2)
