@@ -133,7 +133,7 @@ def pair_star(str):
     elif str[0] == str[1]:
         return str[0] + '*' + pair_star(str[1:])
     else:
-        return str[0] + pair_star[str[1:]]
+        return str[0] + pair_star(str[1:])
 
 def reverse_string(text):
     if len(text) <= 1:
@@ -324,6 +324,11 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(all_star('hello'), 'h*e*l*l*o')
         self.assertEqual(all_star('abc'), 'a*b*c')
         self.assertEqual(all_star('ab'), 'a*b')
+
+    def test_pair_star(self):
+        self.assertEqual(pair_star('hello'), 'hel*lo')
+        self.assertEqual(pair_star('xxyy'), 'x*xy*y')
+        self.assertEqual(pair_star('aaaa'), 'a*a*a*a')
 
 if __name__ == '__main__':
     unittest.main()
