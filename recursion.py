@@ -37,7 +37,7 @@ def sum_digits(n):
     if n == 0:
         return 0
     else:
-        return n % 10 + sum_digits(n / 10)
+        return n % 10 + sum_digits(n/10)
 
 def sum_down_by_2(n):
     if n < 1:
@@ -49,9 +49,9 @@ def count_7(n):
     if n == 0:
         return 0
     elif n % 10 == 7:
-        return 1 + count_7(n / 10)
+        return 1 + count_7(int(n / 10))
     else:
-        return count_7(n / 10)
+        return count_7(int(n / 10))
 
 def count_8(n):
     if n == 0:
@@ -256,6 +256,15 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(bunny_ears_2(0), 0)
         self.assertEqual(bunny_ears_2(1), 2)
         self.assertEqual(bunny_ears_2(2), 5)
+
+    def test_triangle(self):
+        self.assertEqual(triangle(0), 0)
+        self.assertEqual(triangle(1), 1)
+        self.assertEqual(triangle(2), 3)
+
+    def test_count_7(self):
+        self.assertEqual(count_7(8643), 0)
+        self.assertEqual(count_7(717), 2)
 
     def test_count_x(self):
         self.assertEqual(count_x('hi'), 0)
