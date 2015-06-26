@@ -310,6 +310,10 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(change_xy('xxhixx'), 'yyhiyy')
         self.assertEqual(change_xy('xhixhix'), 'yhiyhiy')
 
+    def test_change_pi(self):
+        self.assertEqual(change_pi('xpix'), 'x3.14x')
+        self.assertEqual(change_pi('pipi'), '3.143.14')
+        self.assertEqual(change_pi('pip'), '3.14p')
 
 if __name__ == '__main__':
     unittest.main()
