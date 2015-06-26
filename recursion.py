@@ -37,7 +37,7 @@ def sum_digits(n):
     if n == 0:
         return 0
     else:
-        return n % 10 + sum_digits(n/10)
+        return n % 10 + sum_digits(int(n / 10))
 
 def sum_down_by_2(n):
     if n < 1:
@@ -261,6 +261,11 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(triangle(0), 0)
         self.assertEqual(triangle(1), 1)
         self.assertEqual(triangle(2), 3)
+
+    def test_sum_digits(self):
+        self.assertEqual(sum_digits(126), 9)
+        self.assertEqual(sum_digits(49), 13)
+        self.assertEqual(sum_digits(12), 3)
 
     def test_count_7(self):
         self.assertEqual(count_7(8643), 0)
