@@ -315,5 +315,10 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(change_pi('pipi'), '3.143.14')
         self.assertEqual(change_pi('pip'), '3.14p')
 
+    def test_no_x(self):
+        self.assertEqual(no_x('xaxb'), 'ab')
+        self.assertEqual(no_x('abc'), 'abc')
+        self.assertEqual(no_x('xx'), '')
+
 if __name__ == '__main__':
     unittest.main()
