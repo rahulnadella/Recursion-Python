@@ -340,5 +340,10 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(count_pairs('axax'), 2)
         self.assertEqual(count_pairs('axbx'), 1)
 
+    def test_count_abs(self):
+        self.assertEqual(count_abc('abc'), 1)
+        self.assertEqual(count_abc('abcxxabc'), 2)
+        self.assertEqual(count_abc('abaxxaba'), 2)
+
 if __name__ == '__main__':
     unittest.main()
