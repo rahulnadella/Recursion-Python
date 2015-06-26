@@ -142,10 +142,10 @@ def reverse_string(text):
         return reverse_string(text[1:] + text[0])
 
 def end_x(str):
-    if len(str):
+    if len(str) == 0:
         return str
     elif str[0] == 'x':
-        return end_x(str[1:] + 'x')
+        return end_x(str[1:]) + 'x'
     else:
         return str[0] + end_x(str[1:])
 
@@ -329,6 +329,11 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(pair_star('hello'), 'hel*lo')
         self.assertEqual(pair_star('xxyy'), 'x*xy*y')
         self.assertEqual(pair_star('aaaa'), 'a*a*a*a')
+
+    def test_end_x(self):
+        self.assertEqual(end_x('xxre'), 'rexx')
+        self.assertEqual(end_x('xxhixx'), 'hixxxx')
+        self.assertEqual(end_x('xhixhix'), 'hihixxx')
 
 if __name__ == '__main__':
     unittest.main()
