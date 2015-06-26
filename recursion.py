@@ -252,6 +252,11 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(bunny_ears(1), 2)
         self.assertEqual(bunny_ears(2), 4)
 
+    def test_bunny_ears(self):
+        self.assertEqual(bunny_ears_2(0), 0)
+        self.assertEqual(bunny_ears_2(1), 2)
+        self.assertEqual(bunny_ears_2(2), 5)
+
     def test_count_x(self):
         self.assertEqual(count_x('hi'), 0)
         self.assertEqual(count_x('hixx'), 2)
