@@ -320,5 +320,10 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(no_x('abc'), 'abc')
         self.assertEqual(no_x('xx'), '')
 
+    def test_all_star(self):
+        self.assertEqual(all_star('hello'), 'h*e*l*l*o')
+        self.assertEqual(all_star('abc'), 'a*b*c')
+        self.assertEqual(all_star('ab'), 'a*b')
+
 if __name__ == '__main__':
     unittest.main()
