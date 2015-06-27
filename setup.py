@@ -1,5 +1,5 @@
 """
-Recursion
+Recursion in Python
 ---------
 
 Recursion is a method of solving problems that involves breaking a problem down
