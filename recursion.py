@@ -626,7 +626,7 @@ array220({3},0) → false
 </pre>
 """
 def array220(nums, index):
-    if len(nums) < 2 or index == nums.length - 1:
+    if len(nums) < 2 or index == len(nums) - 1:
         return False
     elif nums[index + 1] == nums[index] * 10:
         return True
@@ -940,6 +940,14 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(array11([1, 2, 11], 0), 1)
         self.assertEqual(array11([11, 11], 0), 2)
         self.assertEqual(array11([1, 2, 3, 4], 0), 0)
+
+    """
+    Test to determine if the array220 function computes the correct Boolean value
+    """
+    def test_array220(self):
+        self.assertTrue(array220([1, 2, 20], 0))
+        self.assertTrue(array220([3, 30], 0))
+        self.assertFalse(array220([3], 0))
 
     """
     Test to solve the Tower of Hanoi game
