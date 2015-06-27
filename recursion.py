@@ -590,6 +590,28 @@ def array6(nums, index):
         return array6(nums, index + 1)
 
 """
+Given an array of ints, compute recursively the number of times that the
+value 11 appears in the array. We'll use the convention of considering
+only the part of the array that begins at the given index. In this way, a
+recursive call can pass index+1 to move down the array. The initial call
+will pass in index as 0.
+
+<pre>
+Example
+array11({1, 2, 11}, 0) → 1
+array11({11, 11}, 0) → 2
+array11({1, 2, 3, 4},0) → 0
+</pre>
+"""
+def array11(nums, index):
+    if index == len(nums):
+        return 0
+    elif nums[index] == 11:
+        return 1 + array11(nums, index + 1)
+    else:
+        return array11(nums, index + 1)
+
+"""
 The Tower of Hanoi (also called the Tower of Brahma or Lucas' Tower,[1]
 and sometimes pluralized) is a mathematical game or puzzle. It consists
 of three rods, and a number of disks of different sizes which can slide
