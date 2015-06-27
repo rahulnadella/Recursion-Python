@@ -16,6 +16,9 @@
 """
 from math import pow
 import unittest
+import logging
+
+logging.basicConfig(filename='recursion.log', level=logging.INFO)
 
 """
 In mathematics, the factorial of a non-negative integer n, denoted by n!,
@@ -729,10 +732,10 @@ disk may be placed on top of a smaller disk.
 
 def tower_of_hanoi(n, start, auxillary, end):
   if n == 1:
-    print ('Current Disk ', n, ': ', start, ' -> ', end)
+    logging.info("Current Dist '{0}' : '{1}' -> '{2}'".format(n, start, end))
   else:
     tower_of_hanoi(n - 1, start, end, auxillary)
-    print ('Current Disk ', n, ': ', start, ' -> ', end)
+    logging.info("Current Dist '{0}' : '{1}' -> '{2}'".format(n, start, end))
     tower_of_hanoi(n - 1, auxillary, start, end)
 
 """
