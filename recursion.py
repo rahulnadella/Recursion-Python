@@ -374,5 +374,9 @@ class RecursionTest(unittest.TestCase):
         self.assertAlmostEqual(lcm(5, 3), 15, 1)
         self.assertAlmostEqual(lcm(6, 8), 24, 1)
 
+    def test_loan_length(self):
+        self.assertEqual(loan_length(0, 0, 0), 0)
+        self.assertEqual(loan_length(1000, 0.1, 250), 5)
+
 if __name__ == '__main__':
     unittest.main()
