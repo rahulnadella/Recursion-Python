@@ -139,7 +139,7 @@ def reverse_string(text):
     if len(text) <= 1:
         return text
     else:
-        return reverse_string(text[1:] + text[0])
+        return reverse_string(text[1:]) + text[0]
 
 def end_x(str):
     if len(str) == 0:
@@ -377,6 +377,9 @@ class RecursionTest(unittest.TestCase):
     def test_loan_length(self):
         self.assertEqual(loan_length(0, 0, 0), 0)
         self.assertEqual(loan_length(1000, 0.1, 250), 5)
+
+    def test_reverse_string(self):
+        self.assertEqual(reverse_string('Hello'), 'olleH')
 
     def test_primes(self):
         for i in range(2, 100):
