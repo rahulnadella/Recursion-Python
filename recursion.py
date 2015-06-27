@@ -1,5 +1,5 @@
-import unittest
 from math import pow
+import unittest
 
 def factorial(k):
     if k <= 1:
@@ -74,6 +74,18 @@ def geometric_sum(k):
         return 0
     else:
         return 1 / (pow(2, k)) + geometric_sum(k - 1)
+
+def mult(j, k):
+    if k < 0:
+        return -__mult_helper__(j, -k)
+    else:
+        return __mult_helper__(j, k)
+
+def __mult_helper__(j, k):
+    if j == 0 or k == 0:
+        return 0
+    else:
+        return (j + mult(j, k - 1))
 
 def expt(n, k):
     if k <= 0:
@@ -290,6 +302,10 @@ class RecursionTest(unittest.TestCase):
     def test_geometric_sum(self):
         self.assertAlmostEqual(geometric_sum(0), 1, 1)
         self.assertAlmostEqual(geometric_sum(1), 1.5, 1)
+
+    def test_mult(self):
+        self.assertEqual(mult(2, 3), 6)
+        self.assertEqual(mult(-2, 5), -10)
 
     def test_expt(self):
         self.assertEqual(expt(2, 3), 8)
