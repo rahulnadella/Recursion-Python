@@ -185,7 +185,7 @@ def string_count(str, sub):
     if len(str) < len(sub):
         return 0
     elif str[0:len(sub)] == sub:
-        return 1 + string_count(str[len(sub)], sub)
+        return 1 + string_count(str[len(sub):], sub)
     else:
         return string_count(str[1:], sub)
 
@@ -354,6 +354,11 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(string_clean('yyzzza'), 'yza')
         self.assertEqual(string_clean('abbbcdd'), 'abcd')
         self.assertEqual(string_clean('Hello'), 'Helo')
+
+    def test_string_count(self):
+        self.assertEqual(string_count('catcowcat', 'cat'), 2)
+        self.assertEqual(string_count('catcowcat', 'cow'), 1)
+        self.assertEqual(string_count('catcowcat', 'dog'), 0)
 
 if __name__ == '__main__':
     unittest.main()
