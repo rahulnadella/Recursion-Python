@@ -360,5 +360,10 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(string_count('catcowcat', 'cow'), 1)
         self.assertEqual(string_count('catcowcat', 'dog'), 0)
 
+    def test_string_copies(self):
+        self.assertEqual(string_copies('catcowcat', 'cat', 2), True)
+        self.assertEqual(string_copies('catcowcat', 'cow', 2), False)
+        self.assertEqual(string_copies('catcowcat', 'cow', 1), True)
+
 if __name__ == '__main__':
     unittest.main()
