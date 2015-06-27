@@ -18,6 +18,7 @@ from math import pow
 import unittest
 import logging
 
+# Set the Logger level to Info and log any messages to recursion.log
 logging.basicConfig(filename='recursion.log', level=logging.INFO)
 
 """
