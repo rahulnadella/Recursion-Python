@@ -200,7 +200,7 @@ def string_copies(str, sub, n):
 def string_dist(str, sub):
     if str.index(sub) == -1:
         return 0
-    elif str[0:len(sub)] == sub and str[len(str) - len(sub)] == sub:
+    elif str[0:len(sub)] == sub and str[len(str) - len(sub):] == sub:
         return len(str)
     elif not(str[0:len(sub)] == sub):
         return string_dist(str[1:], sub)
@@ -364,6 +364,11 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(string_copies('catcowcat', 'cat', 2), True)
         self.assertEqual(string_copies('catcowcat', 'cow', 2), False)
         self.assertEqual(string_copies('catcowcat', 'cow', 1), True)
+
+    def test_string_dist(self):
+        self.assertEqual(string_dist('catcowcat', 'cat'), 9)
+        self.assertEqual(string_dist('catcowcat', 'cow'), 3)
+        self.assertEqual(string_dist('cccatcowcatxx', 'cat'), 9)
 
 if __name__ == '__main__':
     unittest.main()
