@@ -350,5 +350,10 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(count_11('abc11x11x11'), 3)
         self.assertEqual(count_11('111'), 1)
 
+    def test_string_clean(self):
+        self.assertEqual(string_clean('yyzzza'), 'yza')
+        self.assertEqual(string_clean('abbbcdd'), 'abcd')
+        self.assertEqual(string_clean('Hello'), 'Helo')
+
 if __name__ == '__main__':
     unittest.main()
