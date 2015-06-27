@@ -21,5 +21,5 @@ License
 
 [license-image]: http://img.shields.io/badge/license-BSD-blue.svg?style=flat
 [license-url]: LICENSE
-[build-status]: (https://travis-ci.org/rahulnadella/Recursion-Python.svg?branch=master)
-[build-repo]: (https://travis-ci.org/rahulnadella/Recursion-Python)
+[build-status]: https://travis-ci.org/rahulnadella/Recursion-Python.svg?branch=master
+[build-repo]: https://travis-ci.org/rahulnadella/Recursion-Python
