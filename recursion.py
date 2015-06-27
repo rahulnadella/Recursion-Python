@@ -203,6 +203,8 @@ def mult(j, k):
 """
 Recursive method returns the multiplacative sum of j*k when integers j, k
 are positive
+
+This function is private please use the mult function
 """
 def __mult_helper__(j, k):
     if j == 0 or k == 0:
@@ -544,6 +546,8 @@ def loan_length(p, i, mp):
 
 """
 Finds the months needed to pay off loan payment
+
+This function is private please use the loan_length function
 """
 def __loan_length_helper__(p , i, mp, months):
     if p <= 0:
@@ -561,6 +565,29 @@ def primes(x, i):
         return False
     else:
         return primes(x, i - 1)
+
+"""
+Given an array of ints, compute recursively if the array contains a 6.
+We'll use the convention of considering only the part of the array that
+begins at the given index. In this way, a recursive call can pass index+1
+to move down the array. The initial call will pass in index as 0.
+
+<pre>
+Example:
+array6({1, 6, 4}, 0) → true
+array6({1, 4}, 0) → false
+array6({6}, 0) → true
+</pre>
+"""
+def array6(nums, index):
+    if len(nums) == 0:
+        return False
+    elif index == len(nums) - 1:
+        return nums[index] == 6
+    elif nums[index] == 6:
+        return True
+    else:
+        return array6(nums, index + 1)
 
 """
 The Tower of Hanoi (also called the Tower of Brahma or Lucas' Tower,[1]
