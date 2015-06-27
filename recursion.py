@@ -612,6 +612,28 @@ def array11(nums, index):
         return array11(nums, index + 1)
 
 """
+Given an array of ints, compute recursively if the array contains
+somewhere a value followed in the array by that value times 10. We'll use
+the convention of considering only the part of the array that begins at
+the given index. In this way, a recursive call can pass index+1 to move
+down the array. The initial call will pass in index as 0.
+
+<pre>
+Example:
+array220({1, 2, 20}, 0) → true
+array220({3, 30}, 0) → true
+array220({3},0) → false
+</pre>
+"""
+def array220(nums, index):
+    if len(nums) < 2 or index == nums.length - 1:
+        return False
+    elif nums[index + 1] == nums[index] * 10:
+        return True
+    else:
+        return array220(nums, index + 1)
+
+"""
 The Tower of Hanoi (also called the Tower of Brahma or Lucas' Tower,[1]
 and sometimes pluralized) is a mathematical game or puzzle. It consists
 of three rods, and a number of disks of different sizes which can slide
