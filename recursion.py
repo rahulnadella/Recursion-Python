@@ -378,5 +378,11 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(loan_length(0, 0, 0), 0)
         self.assertEqual(loan_length(1000, 0.1, 250), 5)
 
+    def test_primes(self):
+        for i in range(2, 100):
+            if primes(i, i -1):
+                print (+i, ' is prime')
+
+
 if __name__ == '__main__':
     unittest.main()
