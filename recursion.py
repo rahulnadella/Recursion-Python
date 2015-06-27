@@ -370,5 +370,9 @@ class RecursionTest(unittest.TestCase):
         self.assertEqual(string_dist('catcowcat', 'cow'), 3)
         self.assertEqual(string_dist('cccatcowcatxx', 'cat'), 9)
 
+    def test_lcm(self):
+        self.assertAlmostEqual(lcm(5, 3), 15, 1)
+        self.assertAlmostEqual(lcm(6, 8), 24, 1)
+
 if __name__ == '__main__':
     unittest.main()
