@@ -925,6 +925,14 @@ class RecursionTest(unittest.TestCase):
                 print (+i, ' is prime')
 
     """
+    Test to determine if the array6 function outputs the correct Boolean value
+    """
+    def test_array6(self):
+        self.assertTrue(array6([1, 6, 4], 0))
+        self.assertFalse(array6([1, 4], 0))
+        self.assertTrue(array6([6], 0))
+
+    """
     Test to solve the Tower of Hanoi game
     """
     def test_tower_of_hanoi(self):
