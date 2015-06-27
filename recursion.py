@@ -933,6 +933,15 @@ class RecursionTest(unittest.TestCase):
         self.assertTrue(array6([6], 0))
 
     """
+    Test to determine if the array11 function computes the correct number of times
+    11 is in the array
+    """
+    def test_array11(self):
+        self.assertEqual(array11([1, 2, 11], 0), 1)
+        self.assertEqual(array11([11, 11], 0), 2)
+        self.assertEqual(array11([1, 2, 3, 4], 0), 0)
+
+    """
     Test to solve the Tower of Hanoi game
     """
     def test_tower_of_hanoi(self):
